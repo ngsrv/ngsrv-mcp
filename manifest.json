@@ -1,7 +1,7 @@
 {
   "manifest_version": "0.2",
   "name": "ngsrv",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "display_name": "ngsrv",
   "description": "MCP server for ngsrv tunnels. Expose a local HTTP port on a public HTTPS URL from Cursor or Claude Desktop.",
   "author": {
