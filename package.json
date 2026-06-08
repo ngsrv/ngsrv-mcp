@@ -59,6 +59,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ngsrv/ngsrv-mcp.git"
+    "url": "git+https://github.com/ngsrv/ngsrv-mcp.git"
+  },
+  "homepage": "https://github.com/ngsrv/ngsrv-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/ngsrv/ngsrv-mcp/issues"
   }
 }
