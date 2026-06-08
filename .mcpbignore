@@ -1,0 +1,7 @@
+src/
+*.ts
+!dist/**
+node_modules/typescript/**
+node_modules/@types/**
+node_modules/@anthropic-ai/**
+node_modules/.package-lock.json

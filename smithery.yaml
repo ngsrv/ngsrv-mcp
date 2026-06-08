@@ -1,0 +1,38 @@
+# Smithery registry metadata — https://smithery.ai
+name: ngsrv
+description: >-
+  MCP server for ngsrv tunnels. Expose a local HTTP port on a public HTTPS URL
+  from Cursor or Claude Desktop. Optional API token; 12-hour device trial if unset.
+homepage: https://ngsrv.com/docs/ai-agents
+repository: https://github.com/ngsrv/ngsrv-mcp
+license: MIT
+tags:
+  - tunnel
+  - localhost
+  - mcp
+  - cursor
+  - claude
+  - webhook
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      NGSRV_API_TOKEN:
+        type: string
+        description: >-
+          ngsrv API token (agent or standard). Optional. Empty starts a 12-hour
+          free trial via device ID.
+      NGSRV_DEVICE_ID:
+        type: string
+        description: Stable device ID for trial provisioning (auto-generated if omitted).
+    additionalProperties: false
+  commandFunction: |
+    (config) => ({
+      command: "npx",
+      args: ["-y", "ngsrv-mcp@latest"],
+      env: {
+        NGSRV_API_TOKEN: config.NGSRV_API_TOKEN || "",
+        NGSRV_DEVICE_ID: config.NGSRV_DEVICE_ID || "",
+      },
+    })

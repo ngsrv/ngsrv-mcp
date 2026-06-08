@@ -1,0 +1,64 @@
+{
+  "name": "ngsrv-mcp",
+  "version": "1.0.3",
+  "description": "MCP server to expose localhost ports via ngsrv tunnels (Cursor, Claude).",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/createServer.d.ts",
+      "import": "./dist/createServer.js"
+    },
+    "./http": {
+      "types": "./dist/http.d.ts",
+      "import": "./dist/http.js"
+    }
+  },
+  "bin": {
+    "ngsrv-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "smithery.yaml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/index.js",
+    "start:http": "node dist/http.js",
+    "build:mcpb": "npm run build && npx @anthropic-ai/mcpb pack"
+  },
+  "keywords": [
+    "mcp",
+    "ngsrv",
+    "tunnel",
+    "localhost",
+    "cursor",
+    "claude",
+    "ai-agent"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "^2.1.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngsrv/ngsrv-mcp.git"
+  }
+}

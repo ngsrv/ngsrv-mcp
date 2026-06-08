@@ -1,0 +1,52 @@
+{
+  "manifest_version": "0.2",
+  "name": "ngsrv",
+  "version": "1.0.2",
+  "display_name": "ngsrv",
+  "description": "MCP server for ngsrv tunnels. Expose a local HTTP port on a public HTTPS URL from Cursor or Claude Desktop.",
+  "author": {
+    "name": "ngsrv",
+    "url": "https://ngsrv.com"
+  },
+  "homepage": "https://ngsrv.com/docs/ai-agents",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/index.js"],
+      "env": {
+        "NGSRV_API_TOKEN": "${user_config.api_token}",
+        "NGSRV_DEVICE_ID": "${user_config.device_id}"
+      }
+    }
+  },
+  "user_config": {
+    "api_token": {
+      "type": "string",
+      "title": "ngsrv API token",
+      "description": "Agent or standard token from ngsrv.com dashboard. Leave empty for a 12-hour device trial.",
+      "required": false
+    },
+    "device_id": {
+      "type": "string",
+      "title": "Device ID",
+      "description": "Stable ID for trial provisioning. Auto-generated if omitted.",
+      "required": false
+    }
+  },
+  "license": "MIT",
+  "prompts": [
+    {
+      "name": "tunnel.quickstart",
+      "description": "Step-by-step prompt to expose a local dev server on a public HTTPS URL.",
+      "text": "Expose my local HTTP server on port 3000 with ngsrv using tunnel.start."
+    },
+    {
+      "name": "docs.setup",
+      "description": "Show how to add ngsrv MCP to Cursor or Claude Desktop.",
+      "text": "Show ngsrv MCP setup with npx -y ngsrv-mcp and optional NGSRV_API_TOKEN."
+    }
+  ]
+}

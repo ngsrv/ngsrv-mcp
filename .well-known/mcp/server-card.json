@@ -1,0 +1,141 @@
+{
+  "serverInfo": {
+    "name": "ngsrv",
+    "version": "1.0.2"
+  },
+  "instructions": "Expose local HTTP ports on public HTTPS URLs via ngsrv. Call tunnel.start for a public URL, tunnel.list to see active tunnels, token.provision for a 12-hour agent token.",
+  "tools": [
+    {
+      "name": "tunnel.start",
+      "title": "Start tunnel",
+      "description": "Expose a local HTTP server on a public HTTPS URL via ngsrv. Returns public_url and local_port. Use for webhooks, OAuth callbacks, and sharing dev servers.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "port": {
+            "type": "number",
+            "description": "TCP port your local HTTP server listens on. Example: 3000 for Next.js, 8080 for APIs.",
+            "minimum": 1,
+            "maximum": 65535
+          }
+        },
+        "required": ["port"]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "tunnel.list",
+      "title": "List tunnels",
+      "description": "List HTTPS tunnels started by this MCP process. Returns port, public_url, and started_at for each tunnel.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "number",
+            "description": "Maximum number of tunnels to return. Defaults to all active tunnels."
+          }
+        }
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "tunnel.stop",
+      "title": "Stop tunnel",
+      "description": "Stop an ngsrv tunnel started by this MCP session. Pass the same port given to tunnel.start.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "port": {
+            "type": "number",
+            "description": "Local port of the tunnel to stop. Example: 3000.",
+            "minimum": 1,
+            "maximum": 65535
+          }
+        },
+        "required": ["port"]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "token.provision",
+      "title": "Provision agent token",
+      "description": "Obtain a 12-hour ngsrv agent token. Uses NGSRV_API_TOKEN when set; otherwise starts a free device trial.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "refresh": {
+            "type": "boolean",
+            "description": "When true, request a new trial token even if one exists in the environment."
+          }
+        }
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "name": "docs.install",
+      "title": "Install help",
+      "description": "Return ngsrv CLI install commands and MCP client configuration snippets for Cursor and Claude Desktop.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "client": {
+            "type": "string",
+            "description": "Target client name for tailored config. Example: cursor, claude."
+          }
+        }
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "tunnel.quickstart",
+      "description": "Expose a local dev server on a public HTTPS URL.",
+      "arguments": [
+        {
+          "name": "port",
+          "description": "Local HTTP port. Example: 3000.",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "docs.setup",
+      "description": "Show MCP and CLI setup for ngsrv.",
+      "arguments": []
+    }
+  ],
+  "resources": [
+    {
+      "uri": "ngsrv://docs/quickstart",
+      "name": "quickstart",
+      "description": "Install commands for ngsrv CLI, npx @ngsrv/cli, and ngsrv-mcp.",
+      "mimeType": "text/plain"
+    }
+  ]
+}
