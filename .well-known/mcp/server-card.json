@@ -134,7 +134,7 @@
     {
       "uri": "ngsrv://docs/quickstart",
       "name": "quickstart",
-      "description": "Install commands for ngsrv CLI, npx @ngsrv/cli, and ngsrv-mcp.",
+      "description": "Install commands for ngsrv CLI, npx @ngsrv/cli, and @ngsrv/mcp.",
       "mimeType": "text/plain"
     }
   ]

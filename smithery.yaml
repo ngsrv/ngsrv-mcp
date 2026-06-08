@@ -30,7 +30,7 @@ startCommand:
   commandFunction: |
     (config) => ({
       command: "npx",
-      args: ["-y", "ngsrv-mcp@latest"],
+      args: ["-y", "@ngsrv/mcp@latest"],
       env: {
         NGSRV_API_TOKEN: config.NGSRV_API_TOKEN || "",
         NGSRV_DEVICE_ID: config.NGSRV_DEVICE_ID || "",

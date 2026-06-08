@@ -46,7 +46,7 @@
     {
       "name": "docs.setup",
       "description": "Show how to add ngsrv MCP to Cursor or Claude Desktop.",
-      "text": "Show ngsrv MCP setup with npx -y ngsrv-mcp and optional NGSRV_API_TOKEN."
+      "text": "Show ngsrv MCP setup with npx -y @ngsrv/mcp and optional NGSRV_API_TOKEN."
     }
   ]
 }

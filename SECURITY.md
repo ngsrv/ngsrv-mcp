@@ -1,6 +1,6 @@
 # Security
 
-`ngsrv-mcp` is a **public** repository. Do not commit secrets here.
+`@ngsrv/mcp` is a **public** repository. Do not commit secrets here.
 
 ## Safe in this repo
 

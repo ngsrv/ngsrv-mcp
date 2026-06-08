@@ -1,6 +1,6 @@
-# ngsrv-mcp
+# @ngsrv/mcp
 
-MCP server for ngsrv tunnels — expose localhost on public HTTPS from **Cursor** and other MCP clients.
+MCP server for ngsrv tunnels. Expose localhost on public HTTPS from **Cursor** and other MCP clients.
 
 ngsrv is a **developer tunnel tool** (CLI, YAML, webhooks). This package is the optional MCP integration.
 
@@ -13,7 +13,7 @@ ngsrv is a **developer tunnel tool** (CLI, YAML, webhooks). This package is the 
   "mcpServers": {
     "ngsrv": {
       "command": "npx",
-      "args": ["-y", "ngsrv-mcp@latest"]
+      "args": ["-y", "@ngsrv/mcp@latest"]
     }
   }
 }

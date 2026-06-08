@@ -1,4 +1,4 @@
-name: Publish ngsrv-mcp to npm
+name: Publish @ngsrv/mcp to npm
 
 on:
   release:

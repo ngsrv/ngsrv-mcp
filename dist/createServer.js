@@ -359,7 +359,7 @@ export function createNgsrvMcpServer(options = {}) {
                         role: "user",
                         content: {
                             type: "text",
-                            text: "Show ngsrv MCP setup: npx -y ngsrv-mcp, optional NGSRV_API_TOKEN, " +
+                            text: "Show ngsrv MCP setup: npx -y @ngsrv/mcp, optional NGSRV_API_TOKEN, " +
                                 "and npx @ngsrv/cli http 3000 for CLI-only usage. Link https://ngsrv.com/docs/ai-agents",
                         },
                     },
@@ -374,7 +374,7 @@ export function createNgsrvMcpServer(options = {}) {
                 uri: "ngsrv://docs/quickstart",
                 name: "quickstart",
                 title: "ngsrv quickstart",
-                description: "Install commands and links for ngsrv CLI, npx @ngsrv/cli, and ngsrv-mcp.",
+                description: "Install commands and links for ngsrv CLI, npx @ngsrv/cli, and @ngsrv/mcp.",
                 mimeType: "text/plain",
             },
         ],
@@ -388,7 +388,7 @@ export function createNgsrvMcpServer(options = {}) {
             "",
             "CLI: curl -fsSL https://get.ngsrv.com | sh",
             "npx CLI: npx @ngsrv/cli http 3000",
-            "MCP: npx -y ngsrv-mcp",
+            "MCP: npx -y @ngsrv/mcp",
             "Docs: https://ngsrv.com/docs/ai-agents",
             "Smithery: https://smithery.ai/servers/ngsrv/ngsrv",
         ].join("\n");
@@ -413,12 +413,12 @@ export function createNgsrvMcpServer(options = {}) {
                 return toolResult({
                     cli_install: "curl -fsSL https://get.ngsrv.com | sh",
                     npx_cli: "npx @ngsrv/cli http 3000",
-                    npx_mcp: "npx -y ngsrv-mcp",
+                    npx_mcp: "npx -y @ngsrv/mcp",
                     mcp_config: {
                         mcpServers: {
                             ngsrv: {
                                 command: "npx",
-                                args: ["-y", "ngsrv-mcp@latest"],
+                                args: ["-y", "@ngsrv/mcp@latest"],
                                 env: { NGSRV_API_TOKEN: "<optional>" },
                             },
                         },
