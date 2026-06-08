@@ -45,4 +45,5 @@ smithery mcp add ngsrv/ngsrv
 
 ## Docs
 
-https://ngsrv.com/docs/ai-agents
+- [Cursor MCP setup](https://ngsrv.com/docs/ai-agents)
+- [Support](https://ngsrv.com/faq)

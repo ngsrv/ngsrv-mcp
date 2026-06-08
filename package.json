@@ -1,6 +1,6 @@
 {
   "name": "@ngsrv/mcp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "MCP server to expose localhost ports via ngsrv tunnels (Cursor, Claude).",
   "publishConfig": {
     "access": "public"
@@ -57,12 +57,8 @@
     "@types/node": "^20.11.0",
     "typescript": "^5.4.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ngsrv/ngsrv-mcp.git"
-  },
-  "homepage": "https://github.com/ngsrv/ngsrv-mcp#readme",
+  "homepage": "https://ngsrv.com/docs/ai-agents",
   "bugs": {
-    "url": "https://github.com/ngsrv/ngsrv-mcp/issues"
+    "url": "https://ngsrv.com/faq"
   }
 }
