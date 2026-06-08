@@ -1,16 +1,8 @@
 # ngsrv-mcp
 
-MCP server for ngsrv tunnels — **Cursor** (and other MCP clients) expose localhost on public HTTPS.
+MCP server for ngsrv tunnels — expose localhost on public HTTPS from **Cursor** and other MCP clients.
 
-## Install (Smithery)
-
-[![smithery badge](https://smithery.ai/badge/ngsrv/ngsrv)](https://smithery.ai/servers/ngsrv/ngsrv)
-
-**Use Smithery for install and updates:** https://smithery.ai/servers/ngsrv/ngsrv
-
-```bash
-smithery mcp add ngsrv/ngsrv
-```
+ngsrv is a **developer tunnel tool** (CLI, YAML, webhooks). This package is the optional MCP integration.
 
 ## Cursor
 
@@ -42,6 +34,14 @@ Optional: `NGSRV_API_TOKEN` from [ngsrv.com](https://ngsrv.com/login) → API To
 | `docs.install` | Cursor config + install snippets |
 
 Legacy aliases (`start_tunnel`, etc.) still work.
+
+## Registry install (optional)
+
+Some MCP clients support [Smithery](https://smithery.ai/servers/ngsrv/ngsrv):
+
+```bash
+smithery mcp add ngsrv/ngsrv
+```
 
 ## Docs
 
