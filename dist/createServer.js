@@ -304,7 +304,7 @@ export const TOOL_DEFINITIONS = [
  */
 export function createNgsrvMcpServer(options = {}) {
     const leanToolsList = options.leanToolsList ?? true;
-    const server = new Server({ name: "ngsrv", version: "1.0.3" }, {
+    const server = new Server({ name: "ngsrv", version: "1.0.4" }, {
         capabilities: { tools: {}, prompts: {}, resources: {} },
         instructions: SERVER_INSTRUCTIONS,
     });
